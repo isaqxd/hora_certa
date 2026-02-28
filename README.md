@@ -1,5 +1,3 @@
-# teste_software
-Atividade de Teste - G1
 # 🌐 Hora Certa 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 
