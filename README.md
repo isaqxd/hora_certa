@@ -2,6 +2,7 @@
 Atividade de Teste - G1
 # 🌐 Hora Certa 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+
 Este repositório faz parte da atividade de Teste de Software, contendo a documentação do sistema **Hora Certa** - uma solução desenvolvida para auxiliar idosos no gerenciamento autônomo de sua rotina de saúde.
 
 ## Documentação Completa
