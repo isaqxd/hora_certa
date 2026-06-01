@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on linux)" generated="2026-06-01T00:01:09.128483" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="/home/sunshas77/Documents/Universidade/hora_certa/robot/loginTeste/login_tests.robot">
+<test id="s1-t1" name="CT01 - Validar Erro Nativo Identificador Em Branco" line="19">
+<kw name="Abrir Navegador Na Pagina De Login">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-01T00:01:09.271239" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fbc7a8a9550&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.270377" elapsed="0.000901"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.271391" elapsed="0.000229"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.271701" elapsed="0.000223"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.272000" elapsed="0.000166"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:09.272428" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.272246" elapsed="0.439534"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.711988" elapsed="0.013329"/>
+</kw>
+<status status="PASS" start="2026-06-01T00:01:09.269902" elapsed="0.455515"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:09.725888" level="INFO">Clicking button 'css=.btn-primary'.</msg>
+<arg>${BTN_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.725553" elapsed="0.050523"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:09.776412" level="INFO">Executing JavaScript:
+return document.getElementById('identificador').validationMessage;
+Without any arguments.</msg>
+<msg time="2026-06-01T00:01:09.779328" level="INFO">${mensagem} = Please fill out this field.</msg>
+<var>${mensagem}</var>
+<arg>return document.getElementById('identificador').validationMessage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.776268" elapsed="0.003101"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-06-01T00:01:09.779866" level="INFO">Length is 27.</msg>
+<arg>${mensagem}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.779522" elapsed="0.000384"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.780072" elapsed="0.058766"/>
+</kw>
+<doc>Verifica se o navegador bloqueia o envio se o campo identificador estiver vazio.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.269390" elapsed="0.569552"/>
+</test>
+<test id="s1-t2" name="CT02 - Validar Erro Nativo Senha Em Branco" line="27">
+<kw name="Abrir Navegador Na Pagina De Login">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-01T00:01:09.840984" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fbc7a71fd90&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.839687" elapsed="0.001326"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.841103" elapsed="0.000198"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.841373" elapsed="0.000158"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.841594" elapsed="0.000148"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:09.841983" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.841819" elapsed="0.385799"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.227798" elapsed="0.013401"/>
+</kw>
+<status status="PASS" start="2026-06-01T00:01:09.839493" elapsed="0.401806"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.241671" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_ID}</arg>
+<arg>admin@saude.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.241434" elapsed="0.048898"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.290770" level="INFO">Clicking button 'css=.btn-primary'.</msg>
+<arg>${BTN_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.290512" elapsed="0.042099"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.332941" level="INFO">Executing JavaScript:
+return document.getElementById('senha').validationMessage;
+Without any arguments.</msg>
+<msg time="2026-06-01T00:01:10.335635" level="INFO">${mensagem} = Please fill out this field.</msg>
+<var>${mensagem}</var>
+<arg>return document.getElementById('senha').validationMessage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.332792" elapsed="0.002880"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-06-01T00:01:10.336074" level="INFO">Length is 27.</msg>
+<arg>${mensagem}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.335818" elapsed="0.000292"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.336271" elapsed="0.055387"/>
+</kw>
+<doc>Verifica se o navegador bloqueia o envio se a senha estiver vazia.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.839147" elapsed="0.552617"/>
+</test>
+<test id="s1-t3" name="CT03 — Identificador não Cadastrado (Credenciais Inválidas)" line="36">
+<kw name="Abrir Navegador Na Pagina De Login">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-01T00:01:10.392828" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fbc7a71cb90&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.392500" elapsed="0.000369"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.392956" elapsed="0.000187"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.393220" elapsed="0.000157"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.393439" elapsed="0.000150"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.393829" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.393669" elapsed="0.393773"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.787609" elapsed="0.013325"/>
+</kw>
+<status status="PASS" start="2026-06-01T00:01:10.392324" elapsed="0.408701"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.801405" level="INFO">Typing text 'inexistente@gmail.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_ID}</arg>
+<arg>${USER_INEXISTENTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.801164" elapsed="0.048131"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.849853" level="INFO">Typing text 'senhaQualquer123@' into text field 'id=senha'.</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA_QUALQUER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.849523" elapsed="0.047205"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:10.897120" level="INFO">Clicking button 'css=.btn-primary'.</msg>
+<arg>${BTN_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.896898" elapsed="0.041918"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALERT_DANGER}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.938993" elapsed="0.483119"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:11.434192" level="INFO">${texto_erro} = Credenciais inválidas.</msg>
+<var>${texto_erro}</var>
+<arg>${ALERT_DANGER}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.422290" elapsed="0.011949"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:11.434597" level="INFO">Executing JavaScript:
+return document.getElementById('senha').validationMessage;
+Without any arguments.</msg>
+<msg time="2026-06-01T00:01:11.437272" level="INFO">${mensagem} = Please fill out this field.</msg>
+<var>${mensagem}</var>
+<arg>return document.getElementById('senha').validationMessage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.434435" elapsed="0.002881"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.437538" elapsed="0.055385"/>
+</kw>
+<doc>Valida o comportamento quando o usuário tenta logar com um e-mail/CPF que não existe no banco.</doc>
+<status status="PASS" start="2026-06-01T00:01:10.391971" elapsed="1.101052"/>
+</test>
+<test id="s1-t4" name="CT04 — Identificador com Conta Inativa" line="49">
+<kw name="Abrir Navegador Na Pagina De Login">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-01T00:01:11.494009" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fbc7a7b6650&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.493697" elapsed="0.000336"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.494115" elapsed="0.000188"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.494368" elapsed="0.000148"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.494574" elapsed="0.000144"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:11.494956" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.494799" elapsed="0.361825"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.856784" elapsed="0.013855"/>
+</kw>
+<status status="PASS" start="2026-06-01T00:01:11.493522" elapsed="0.377210"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:11.871095" level="INFO">Typing text 'luisedu@gmail.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_ID}</arg>
+<arg>${USER_INATIVO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.870862" elapsed="0.061521"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:11.932802" level="INFO">Typing text 'senhaForte123@' into text field 'id=senha'.</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA_INATIVO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.932563" elapsed="0.042272"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:11.975244" level="INFO">Clicking button 'css=.btn-primary'.</msg>
+<arg>${BTN_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.975010" elapsed="0.040548"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALERT_DANGER}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T00:01:12.015741" elapsed="0.465242"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:12.491932" level="INFO">${texto_erro} = Conta inativa. Entre em contato com o administrador.</msg>
+<var>${texto_erro}</var>
+<arg>${ALERT_DANGER}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T00:01:12.481169" elapsed="0.010802"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T00:01:12.492314" level="INFO">Executing JavaScript:
+return document.getElementById('identificador').validationMessage;
+Without any arguments.</msg>
+<msg time="2026-06-01T00:01:12.494809" level="INFO">${mensagem} = </msg>
+<var>${mensagem}</var>
+<arg>return document.getElementById('identificador').validationMessage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T00:01:12.492170" elapsed="0.002676"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T00:01:12.495044" elapsed="0.055556"/>
+</kw>
+<doc>Valida o bloqueio de login para usuários que estão com a conta marcada como INATIVA no sistema.</doc>
+<status status="PASS" start="2026-06-01T00:01:11.493201" elapsed="1.057524"/>
+</test>
+<doc>Validação de mensagens de erro nativas no formulário de login.</doc>
+<status status="PASS" start="2026-06-01T00:01:09.128978" elapsed="3.422108"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Tests" id="s1" pass="4" fail="0" skip="0">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
