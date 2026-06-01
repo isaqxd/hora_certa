@@ -87,18 +87,28 @@ public class ConexaoDB {
     }
 
     private static void criarAdminPadrao(Connection conn) throws SQLException {
+        // Verifica se o administrador já existe
         try (var ps = conn.prepareStatement(
                 "SELECT COUNT(*) FROM usuario WHERE tipo = 'ADMINISTRADOR'");
              var rs = ps.executeQuery()) {
+
             rs.next();
             if (rs.getInt(1) == 0) {
+                // Se não existir, cria o administrador do zero
                 String senhaHash = org.mindrot.jbcrypt.BCrypt.hashpw("Admin@123", org.mindrot.jbcrypt.BCrypt.gensalt(12));
                 try (var insert = conn.prepareStatement(
-                        "INSERT INTO usuario (nome, email, cpf, senha, tipo, expira_senha, primeiro_login) " +
-                        "VALUES ('Administrador', 'admin@saude.com', '000.000.000-00', ?, 'ADMINISTRADOR', " +
-                        "DATEADD('DAY', 90, CURRENT_TIMESTAMP), TRUE)")) {
+                        "INSERT INTO usuario (nome, email, cpf, senha, tipo, expira_senha, primeiro_login, status, tentativas_login, bloqueio_ate) " +
+                                "VALUES ('Administrador', 'admin@saude.com', '000.000.000-00', ?, 'ADMINISTRADOR', " +
+                                "DATEADD('DAY', 90, CURRENT_TIMESTAMP), TRUE, 'ATIVO', 0, NULL)")) {
                     insert.setString(1, senhaHash);
                     insert.executeUpdate();
+                }
+            } else {
+                // Se já existir, apenas limpa os bloqueios e as tentativas falhas para o teste rodar liso
+                try (var update = conn.prepareStatement(
+                        "UPDATE usuario SET status = 'ATIVO', tentativas_login = 0, bloqueio_ate = NULL " +
+                                "WHERE tipo = 'ADMINISTRADOR'")) {
+                    update.executeUpdate();
                 }
             }
         }
