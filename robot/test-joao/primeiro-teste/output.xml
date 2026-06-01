@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-30T20:29:57.256277" rpa="false" schemaversion="5">
+<suite id="s1" name="Trocar Senha" source="C:\Users\João Arthur\testes-joao-arthur\ui1-trocar-senha\trocar_senha.robot">
+<test id="s1-t1" name="CT01 - Primeiro login com senhas identicas deve redirecionar para dashboard" line="24">
+<kw name="Dado que o usuário fez login como primeiro acesso">
+<kw name="Abrir Brave">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-30T20:29:57.812317" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADC9BE0&gt;</msg>
+<var>${options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<arg>modules=selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:29:57.808203" elapsed="0.004185"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-05-30T20:29:57.813139" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADC9BE0&gt;</msg>
+<arg>${options}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-05-30T20:29:57.812673" elapsed="0.000538"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.__setattr__('binary_location', 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:29:57.813348" elapsed="0.000557"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:29:57.814355" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:29:57.814073" elapsed="0.823125"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-30T20:29:58.637461" elapsed="0.024569"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:29:57.807251" elapsed="0.854971"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:29:58.662663" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<arg>${URL_BASE}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:29:58.662407" elapsed="1.010007"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:29:59.673351" level="INFO">Typing text 'robot3@teste.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENTIFICADOR}</arg>
+<arg>${USER_PRIMEIRO_LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:29:59.672680" elapsed="0.086453"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:29:59.759894" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-05-30T20:29:59.792012" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>${SENHA_PRIMEIRO_LOGIN}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:29:59.759415" elapsed="0.084166"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:29:59.844256" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:29:59.843849" elapsed="0.081391"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>trocar-senha</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:29:59.925481" elapsed="1.561326"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:01.507757" level="INFO">Element 'id=senhaAtual' is displayed.</msg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.487552" elapsed="0.020289"/>
+</kw>
+<msg time="2026-05-30T20:30:01.507993" level="INFO">${tem_senha_atual} = True</msg>
+<var>${tem_senha_atual}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.487069" elapsed="0.020963"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:01.509076" level="INFO">Typing password into text field 'id=senhaAtual'.</msg>
+<msg time="2026-05-30T20:30:01.538341" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<arg>${SENHA_PRIMEIRO_LOGIN}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.508781" elapsed="0.071049"/>
+</kw>
+<arg>${tem_senha_atual}</arg>
+<arg>Input Password</arg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<arg>${SENHA_PRIMEIRO_LOGIN}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.508277" elapsed="0.071690"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:29:57.806677" elapsed="3.773406"/>
+</kw>
+<kw name="Quando o usuário preenche nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:01.581198" level="INFO">Typing password into text field 'id=novaSenha'.</msg>
+<msg time="2026-05-30T20:30:01.613826" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_NOVA_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.580876" elapsed="0.073227"/>
+</kw>
+<arg>Roboto@2025</arg>
+<status status="PASS" start="2026-05-30T20:30:01.580493" elapsed="0.073777"/>
+</kw>
+<kw name="E o usuário confirma nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:01.655375" level="INFO">Typing password into text field 'id=confirmacao'.</msg>
+<msg time="2026-05-30T20:30:01.688435" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_CONFIRMACAO}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.655012" elapsed="0.075238"/>
+</kw>
+<arg>Roboto@2025</arg>
+<status status="PASS" start="2026-05-30T20:30:01.654649" elapsed="0.075755"/>
+</kw>
+<kw name="E o usuário clica em salvar">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:01.731387" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:01.731064" elapsed="1.811093"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:01.730745" elapsed="1.811588"/>
+</kw>
+<kw name="Então deve ser redirecionado para o dashboard">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>dashboard</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:03.543062" elapsed="0.004261"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:03.551347" level="INFO">Current location contains 'msg=senha_atualizada'.</msg>
+<arg>msg=senha_atualizada</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:03.547502" elapsed="0.003951"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:03.542706" elapsed="0.008888"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:29:57.803819" elapsed="5.748087"/>
+</test>
+<test id="s1-t2" name="CT02 - Primeiro login com senhas divergentes deve exibir erro" line="31">
+<kw name="Dado que o usuário fez login com">
+<kw name="Abrir Brave">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-30T20:30:03.554418" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADD1E50&gt;</msg>
+<var>${options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<arg>modules=selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:30:03.553848" elapsed="0.000617"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-05-30T20:30:03.555049" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADD1E50&gt;</msg>
+<arg>${options}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-05-30T20:30:03.554629" elapsed="0.000486"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.__setattr__('binary_location', 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:30:03.555253" elapsed="0.000460"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:03.556275" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:03.555910" elapsed="0.759703"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-30T20:30:04.315905" elapsed="0.024338"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:03.553553" elapsed="0.786854"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:04.340844" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<arg>${URL_BASE}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:04.340590" elapsed="0.230727"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:04.572018" level="INFO">Typing text 'robot4@teste.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENTIFICADOR}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:04.571586" elapsed="0.086195"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:04.658490" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-05-30T20:30:04.689661" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:04.658065" elapsed="0.084143"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:04.742832" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:04.742469" elapsed="1.186986"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>trocar-senha</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:05.929704" elapsed="0.005849"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:05.955526" level="INFO">Element 'id=senhaAtual' is displayed.</msg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-30T20:30:05.936278" elapsed="0.019362"/>
+</kw>
+<msg time="2026-05-30T20:30:05.955813" level="INFO">${tem_senha_atual} = True</msg>
+<var>${tem_senha_atual}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-05-30T20:30:05.935751" elapsed="0.020098"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:05.957035" level="INFO">Typing password into text field 'id=senhaAtual'.</msg>
+<msg time="2026-05-30T20:30:05.984983" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:05.956675" elapsed="0.067698"/>
+</kw>
+<arg>${tem_senha_atual}</arg>
+<arg>Input Password</arg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<arg>${senha}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-05-30T20:30:05.956124" elapsed="0.068421"/>
+</kw>
+<arg>${USER_PRIMEIRO_LOGIN_2}</arg>
+<arg>${SENHA_PRIMEIRO_LOGIN_2}</arg>
+<status status="PASS" start="2026-05-30T20:30:03.553118" elapsed="2.471549"/>
+</kw>
+<kw name="Quando o usuário preenche nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:06.025876" level="INFO">Typing password into text field 'id=novaSenha'.</msg>
+<msg time="2026-05-30T20:30:06.057843" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_NOVA_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.025483" elapsed="0.072950"/>
+</kw>
+<arg>Roboto@2025</arg>
+<status status="PASS" start="2026-05-30T20:30:06.025097" elapsed="0.073495"/>
+</kw>
+<kw name="E o usuário confirma nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:06.099794" level="INFO">Typing password into text field 'id=confirmacao'.</msg>
+<msg time="2026-05-30T20:30:06.130016" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_CONFIRMACAO}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.099398" elapsed="0.071719"/>
+</kw>
+<arg>Outra@1234</arg>
+<status status="PASS" start="2026-05-30T20:30:06.099005" elapsed="0.072264"/>
+</kw>
+<kw name="E o usuário clica em salvar">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:06.172441" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.172065" elapsed="0.066164"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:06.171712" elapsed="0.066687"/>
+</kw>
+<kw name="Então deve exibir mensagem de erro">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALERTA_ERRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.239162" elapsed="0.295658"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:06.554722" level="INFO">Element 'css=.alert.alert-danger' contains text 'A nova senha e a confirmação não coincidem.'.</msg>
+<arg>${ALERTA_ERRO}</arg>
+<arg>${mensagem_esperada}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.535084" elapsed="0.019739"/>
+</kw>
+<arg>A nova senha e a confirmação não coincidem.</arg>
+<status status="PASS" start="2026-05-30T20:30:06.238774" elapsed="0.316213"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:03.552505" elapsed="3.002836"/>
+</test>
+<test id="s1-t3" name="CT03 - Nao primeiro login com senhas identicas deve redirecionar para dashboard" line="38">
+<kw name="Dado que o usuário fez login normalmente">
+<kw name="Abrir Brave">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-30T20:30:06.557721" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADD1950&gt;</msg>
+<var>${options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<arg>modules=selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.557197" elapsed="0.000572"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-05-30T20:30:06.558307" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADD1950&gt;</msg>
+<arg>${options}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.557927" elapsed="0.000440"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.__setattr__('binary_location', 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.558533" elapsed="0.000486"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:06.559528" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:06.559205" elapsed="0.745273"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-30T20:30:07.304728" elapsed="0.024468"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:06.556908" elapsed="0.772441"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:07.329762" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<arg>${URL_BASE}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:07.329528" elapsed="0.215708"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:07.545919" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENTIFICADOR}</arg>
+<arg>${USER_NORMAL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:07.545500" elapsed="0.083754"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:07.629956" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-05-30T20:30:07.661664" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>${SENHA_NORMAL}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:07.629540" elapsed="0.076680"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:07.706924" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:07.706512" elapsed="1.928623"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>dashboard</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.635374" elapsed="0.005009"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:09.640849" level="INFO">Opening url 'http://localhost:8080/trocar-senha'</msg>
+<arg>${URL_BASE}/trocar-senha</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.640598" elapsed="0.043957"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:06.556569" elapsed="3.128155"/>
+</kw>
+<kw name="Quando o usuário preenche a senha atual">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:09.685868" level="INFO">Typing password into text field 'id=senhaAtual'.</msg>
+<msg time="2026-05-30T20:30:09.722838" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.685497" elapsed="0.077438"/>
+</kw>
+<arg>${SENHA_NORMAL}</arg>
+<status status="PASS" start="2026-05-30T20:30:09.685078" elapsed="0.078052"/>
+</kw>
+<kw name="E o usuário preenche nova senha">
+<kw name="Quando o usuário preenche nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:09.764765" level="INFO">Typing password into text field 'id=novaSenha'.</msg>
+<msg time="2026-05-30T20:30:09.796386" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_NOVA_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.764353" elapsed="0.071675"/>
+</kw>
+<arg>${senha}</arg>
+<status status="PASS" start="2026-05-30T20:30:09.763963" elapsed="0.072302"/>
+</kw>
+<arg>Admin@789</arg>
+<status status="PASS" start="2026-05-30T20:30:09.763533" elapsed="0.072820"/>
+</kw>
+<kw name="E o usuário confirma nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:09.837472" level="INFO">Typing password into text field 'id=confirmacao'.</msg>
+<msg time="2026-05-30T20:30:09.869911" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_CONFIRMACAO}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.837089" elapsed="0.073050"/>
+</kw>
+<arg>Admin@789</arg>
+<status status="PASS" start="2026-05-30T20:30:09.836739" elapsed="0.073562"/>
+</kw>
+<kw name="E o usuário clica em salvar">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:09.911274" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.910970" elapsed="0.067054"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:09.910653" elapsed="0.067536"/>
+</kw>
+<kw name="Então deve ser redirecionado para o dashboard">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>dashboard</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:09.979080" elapsed="1.890931"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:11.873939" level="INFO">Current location contains 'msg=senha_atualizada'.</msg>
+<arg>msg=senha_atualizada</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:11.870273" elapsed="0.003820"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:09.978707" elapsed="1.895508"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:06.555844" elapsed="5.318670"/>
+</test>
+<test id="s1-t4" name="CT04 - Nao primeiro login com senhas divergentes deve exibir erro" line="46">
+<kw name="Dado que o usuário fez login normalmente">
+<kw name="Abrir Brave">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-30T20:30:11.877207" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADF3A80&gt;</msg>
+<var>${options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<arg>modules=selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:30:11.876630" elapsed="0.000664"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-05-30T20:30:11.877913" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002427ADF3A80&gt;</msg>
+<arg>${options}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-05-30T20:30:11.877506" elapsed="0.000488"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.__setattr__('binary_location', 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-30T20:30:11.878165" elapsed="0.000491"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:11.879167" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:11.878877" elapsed="0.742384"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-30T20:30:12.621519" elapsed="0.023839"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:11.876308" elapsed="0.769184"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:12.645929" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<arg>${URL_BASE}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:12.645650" elapsed="0.223497"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:12.869846" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENTIFICADOR}</arg>
+<arg>${USER_NORMAL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:12.869403" elapsed="0.084571"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:12.954659" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-05-30T20:30:12.986069" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>${SENHA_NORMAL}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:12.954238" elapsed="0.082344"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:13.037269" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:13.036875" elapsed="0.080146"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>dashboard</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:13.117301" elapsed="1.827640"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:14.945478" level="INFO">Opening url 'http://localhost:8080/trocar-senha'</msg>
+<arg>${URL_BASE}/trocar-senha</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-30T20:30:14.945230" elapsed="0.045939"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:11.875842" elapsed="3.115498"/>
+</kw>
+<kw name="Quando o usuário preenche a senha atual">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:14.992669" level="INFO">Typing password into text field 'id=senhaAtual'.</msg>
+<msg time="2026-05-30T20:30:15.028836" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_ATUAL}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:14.992294" elapsed="0.076853"/>
+</kw>
+<arg>${SENHA_NORMAL}</arg>
+<status status="PASS" start="2026-05-30T20:30:14.991758" elapsed="0.077563"/>
+</kw>
+<kw name="E o usuário preenche nova senha">
+<kw name="Quando o usuário preenche nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:15.070900" level="INFO">Typing password into text field 'id=novaSenha'.</msg>
+<msg time="2026-05-30T20:30:15.104853" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_NOVA_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:15.070510" elapsed="0.074811"/>
+</kw>
+<arg>${senha}</arg>
+<status status="PASS" start="2026-05-30T20:30:15.070147" elapsed="0.075357"/>
+</kw>
+<arg>Admin@789</arg>
+<status status="PASS" start="2026-05-30T20:30:15.069684" elapsed="0.075904"/>
+</kw>
+<kw name="E o usuário confirma nova senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:15.146688" level="INFO">Typing password into text field 'id=confirmacao'.</msg>
+<msg time="2026-05-30T20:30:15.178023" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_CONFIRMACAO}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:15.146349" elapsed="0.072491"/>
+</kw>
+<arg>Outra@1234</arg>
+<status status="PASS" start="2026-05-30T20:30:15.145995" elapsed="0.072999"/>
+</kw>
+<kw name="E o usuário clica em salvar">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:15.219978" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T20:30:15.219665" elapsed="0.068427"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:15.219347" elapsed="0.068929"/>
+</kw>
+<kw name="Então deve exibir mensagem de erro">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALERTA_ERRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-30T20:30:15.289073" elapsed="0.640766"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-30T20:30:15.950170" level="INFO">Element 'css=.alert.alert-danger' contains text 'A nova senha e a confirmação não coincidem.'.</msg>
+<arg>${ALERTA_ERRO}</arg>
+<arg>${mensagem_esperada}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-05-30T20:30:15.930080" elapsed="0.020190"/>
+</kw>
+<arg>A nova senha e a confirmação não coincidem.</arg>
+<status status="PASS" start="2026-05-30T20:30:15.288665" elapsed="0.661728"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:11.875104" elapsed="4.075581"/>
+</test>
+<kw name="Fechar navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-30T20:30:15.951812" elapsed="2.143699"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:30:15.951564" elapsed="2.144150"/>
+</kw>
+<status status="PASS" start="2026-05-30T20:29:57.258869" elapsed="20.836934"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Trocar Senha" id="s1" pass="4" fail="0" skip="0">Trocar Senha</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
