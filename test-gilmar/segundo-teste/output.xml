@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-01T11:37:49.293039" rpa="false" schemaversion="5">
+<suite id="s1" name="Web Test Medicamentos" source="C:\Users\Gilmas\Documents\Faculdade\2026-01-Semestre\Teste-de-interface-N2\Teste-numero-2\web_test_medicamentos.robot">
+<kw name="Dado que o usuário está autenticado no sistema" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:37:49.530242" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:37:49.529973" elapsed="38.761056"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T11:38:28.291374" elapsed="0.029730"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:28.321901" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>${LOGIN_IDENT}</arg>
+<arg>admin@saude.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:28.321342" elapsed="0.092838"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:28.414805" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-01T11:38:28.452150" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN_SENHA}</arg>
+<arg>Admin@456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:28.414416" elapsed="0.089899"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:28.504960" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:28.504559" elapsed="0.104721"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-01T11:38:30.610912" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-01T11:38:28.609619" elapsed="2.001442"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:51.062546" level="INFO">Current location contains '/dashboard'.</msg>
+<arg>/dashboard</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-01T11:38:30.611278" elapsed="20.451455"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:37:49.529394" elapsed="61.533483"/>
+</kw>
+<test id="s1-t1" name="CT01 Deve validar nome obrigatório via HTML5" line="29">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:51.064518" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:38:51.064285" elapsed="2.122684"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:51.063807" elapsed="2.123312"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.188389" level="INFO">Typing text '' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.188159" elapsed="0.065381"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.254144" level="INFO">Typing text '1 cápsula' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.253766" elapsed="0.075323"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.329750" level="INFO">Typing text 'A cada 8 horas' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.329333" elapsed="0.083763"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.413600" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.413260" elapsed="0.110559"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.525433" level="INFO">Selecting options from selection list 'id=pacienteId' by value 3.</msg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.525171" elapsed="0.075880"/>
+</kw>
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.524052" elapsed="0.077139"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.601787" level="INFO">Typing text '2026-06-01' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.601388" elapsed="0.080423"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.682267" level="INFO">Typing text '2026-06-10' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.681986" elapsed="0.075410"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>1 cápsula</arg>
+<arg>A cada 8 horas</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>3</arg>
+<arg>2026-06-01</arg>
+<arg>2026-06-10</arg>
+<status status="PASS" start="2026-06-01T11:38:53.187577" elapsed="0.569979"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.758672" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.758357" elapsed="0.108899"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:53.757993" elapsed="0.109430"/>
+</kw>
+<kw name="Então o navegador deve apontar o campo como obrigatório">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.868715" level="INFO">Executing JavaScript:
+return document.getElementById('nome').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-06-01T11:38:53.876403" level="INFO">${bloqueado} = True</msg>
+<var>${bloqueado}</var>
+<arg>return document.getElementById('${id_campo}').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.868376" elapsed="0.008135"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${bloqueado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.876851" elapsed="0.000793"/>
+</kw>
+<arg>nome</arg>
+<status status="PASS" start="2026-06-01T11:38:53.867870" elapsed="0.009957"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:51.062993" elapsed="2.815316"/>
+</test>
+<test id="s1-t2" name="CT02 Deve validar dosagem obrigatória via HTML5" line="34">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:53.880056" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:38:53.879871" elapsed="1.148768"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:53.879516" elapsed="1.149334"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.030543" level="INFO">Typing text 'Dipirona' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.030232" elapsed="0.076008"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.106856" level="INFO">Typing text '' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.106480" elapsed="0.072969"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.180087" level="INFO">Typing text 'A cada 8 horas' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.179696" elapsed="0.080767"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.261099" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.260698" elapsed="0.071143"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.333914" level="INFO">Selecting options from selection list 'id=pacienteId' by value 3.</msg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.333526" elapsed="0.079313"/>
+</kw>
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.332115" elapsed="0.080865"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.413597" level="INFO">Typing text '2026-06-01' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.413179" elapsed="0.083972"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.497856" level="INFO">Typing text '2026-06-10' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.497389" elapsed="0.083443"/>
+</kw>
+<arg>Dipirona</arg>
+<arg>${EMPTY}</arg>
+<arg>A cada 8 horas</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>3</arg>
+<arg>2026-06-01</arg>
+<arg>2026-06-10</arg>
+<status status="PASS" start="2026-06-01T11:38:55.029426" elapsed="0.551562"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.583012" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.581768" elapsed="0.078177"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:55.581402" elapsed="0.078652"/>
+</kw>
+<kw name="Então o navegador deve apontar o campo como obrigatório">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.661106" level="INFO">Executing JavaScript:
+return document.getElementById('dosagem').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-06-01T11:38:55.667273" level="INFO">${bloqueado} = True</msg>
+<var>${bloqueado}</var>
+<arg>return document.getElementById('${id_campo}').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.660865" elapsed="0.006525"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${bloqueado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.667611" elapsed="0.000344"/>
+</kw>
+<arg>dosagem</arg>
+<status status="PASS" start="2026-06-01T11:38:55.660477" elapsed="0.007556"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:53.878995" elapsed="1.789384"/>
+</test>
+<test id="s1-t3" name="CT03 Deve validar frequência obrigatória via HTML5" line="39">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.670666" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.670478" elapsed="0.253743"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:55.669820" elapsed="0.254640"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:55.926567" level="INFO">Typing text 'Dipirona' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:55.926084" elapsed="0.079563"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.006339" level="INFO">Typing text '1 cápsula' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.005902" elapsed="0.075299"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.081939" level="INFO">Typing text '' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.081471" elapsed="0.090632"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.172913" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.172350" elapsed="0.100243"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.273799" level="INFO">Selecting options from selection list 'id=pacienteId' by value 3.</msg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.273549" elapsed="0.058728"/>
+</kw>
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.272780" elapsed="0.059649"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.333097" level="INFO">Typing text '2026-06-01' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.332664" elapsed="0.075089"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.408462" level="INFO">Typing text '2026-06-10' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.408024" elapsed="0.075667"/>
+</kw>
+<arg>Dipirona</arg>
+<arg>1 cápsula</arg>
+<arg>${EMPTY}</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>3</arg>
+<arg>2026-06-01</arg>
+<arg>2026-06-10</arg>
+<status status="PASS" start="2026-06-01T11:38:55.924896" elapsed="0.558970"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.484791" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.484560" elapsed="0.105227"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:56.484288" elapsed="0.105655"/>
+</kw>
+<kw name="Então o navegador deve apontar o campo como obrigatório">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.591234" level="INFO">Executing JavaScript:
+return document.getElementById('frequencia').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-06-01T11:38:56.598306" level="INFO">${bloqueado} = True</msg>
+<var>${bloqueado}</var>
+<arg>return document.getElementById('${id_campo}').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.590924" elapsed="0.007450"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${bloqueado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.598589" elapsed="0.000465"/>
+</kw>
+<arg>frequencia</arg>
+<status status="PASS" start="2026-06-01T11:38:56.590424" elapsed="0.008745"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:55.669015" elapsed="0.930495"/>
+</test>
+<test id="s1-t4" name="CT04 Deve validar seleção de paciente via HTML5" line="44">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.601680" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.601422" elapsed="0.249740"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:56.600930" elapsed="0.250425"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.853541" level="INFO">Typing text 'Dipirona' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.853023" elapsed="0.096561"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:56.950073" level="INFO">Typing text '1 cápsula' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:56.949777" elapsed="0.079429"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.029915" level="INFO">Typing text 'A cada 8 horas' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.029476" elapsed="0.090145"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.120153" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.119817" elapsed="0.105777"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.225866" elapsed="0.001134"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.227580" level="INFO">Typing text '2026-06-01' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.227202" elapsed="0.077348"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.305030" level="INFO">Typing text '2026-06-10' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.304735" elapsed="0.074429"/>
+</kw>
+<arg>Dipirona</arg>
+<arg>1 cápsula</arg>
+<arg>A cada 8 horas</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>${EMPTY}</arg>
+<arg>2026-06-01</arg>
+<arg>2026-06-10</arg>
+<status status="PASS" start="2026-06-01T11:38:56.851884" elapsed="0.527447"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.380238" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.380018" elapsed="0.093036"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:57.379759" elapsed="0.093484"/>
+</kw>
+<kw name="Então o navegador deve apontar o campo como obrigatório">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.474201" level="INFO">Executing JavaScript:
+return document.getElementById('pacienteId').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-06-01T11:38:57.481404" level="INFO">${bloqueado} = True</msg>
+<var>${bloqueado}</var>
+<arg>return document.getElementById('${id_campo}').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.474021" elapsed="0.007462"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${bloqueado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.481740" elapsed="0.000631"/>
+</kw>
+<arg>pacienteId</arg>
+<status status="PASS" start="2026-06-01T11:38:57.473698" elapsed="0.008903"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:56.600325" elapsed="0.882738"/>
+</test>
+<test id="s1-t5" name="CT05 Deve validar data de início obrigatória via HTML5" line="49">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.486444" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.486198" elapsed="0.242553"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:57.485689" elapsed="0.243258"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.731301" level="INFO">Typing text 'Dipirona' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.730545" elapsed="0.083791"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.815084" level="INFO">Typing text '1 cápsula' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.814607" elapsed="0.083411"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:57.898917" level="INFO">Typing text 'A cada 8 horas' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:57.898452" elapsed="0.112930"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.011870" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.011579" elapsed="0.102579"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.116033" level="INFO">Selecting options from selection list 'id=pacienteId' by value 3.</msg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.115659" elapsed="0.071938"/>
+</kw>
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.114494" elapsed="0.073261"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.188462" level="INFO">Typing text '' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.187978" elapsed="0.081997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.270712" level="INFO">Typing text '2026-06-10' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.270248" elapsed="0.093227"/>
+</kw>
+<arg>Dipirona</arg>
+<arg>1 cápsula</arg>
+<arg>A cada 8 horas</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>3</arg>
+<arg>${EMPTY}</arg>
+<arg>2026-06-10</arg>
+<status status="PASS" start="2026-06-01T11:38:57.729486" elapsed="0.634202"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.364930" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.364562" elapsed="0.105871"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:58.364170" elapsed="0.106377"/>
+</kw>
+<kw name="Então o navegador deve apontar o campo como obrigatório">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.471707" level="INFO">Executing JavaScript:
+return document.getElementById('dataInicio').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-06-01T11:38:58.482638" level="INFO">${bloqueado} = True</msg>
+<var>${bloqueado}</var>
+<arg>return document.getElementById('${id_campo}').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.471442" elapsed="0.011362"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${bloqueado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.483383" elapsed="0.001517"/>
+</kw>
+<arg>dataInicio</arg>
+<status status="PASS" start="2026-06-01T11:38:58.471006" elapsed="0.014256"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:57.484304" elapsed="1.001281"/>
+</test>
+<test id="s1-t6" name="CT06 Deve validar data de término anterior à data de início no backend" line="54">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.487588" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.487395" elapsed="0.250325"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:58.487040" elapsed="0.250847"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.739035" level="INFO">Typing text 'Dipirona' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.738783" elapsed="0.089723"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.829093" level="INFO">Typing text '1 cápsula' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.828723" elapsed="0.104714"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:58.934211" level="INFO">Typing text 'A cada 8 horas' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:58.933694" elapsed="0.096410"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:59.030804" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.030357" elapsed="0.083952"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:59.116162" level="INFO">Selecting options from selection list 'id=pacienteId' by value 3.</msg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.115776" elapsed="0.076211"/>
+</kw>
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.114580" elapsed="0.077615"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:59.192797" level="INFO">Typing text '10/06/2026' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.192394" elapsed="0.106909"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:59.299775" level="INFO">Typing text '01/06/2026' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.299497" elapsed="0.079428"/>
+</kw>
+<arg>Dipirona</arg>
+<arg>1 cápsula</arg>
+<arg>A cada 8 horas</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>3</arg>
+<arg>10/06/2026</arg>
+<arg>01/06/2026</arg>
+<status status="PASS" start="2026-06-01T11:38:58.738361" elapsed="0.640723"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:38:59.380174" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.379857" elapsed="0.099997"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:59.379502" elapsed="0.100460"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-01T11:39:01.481138" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-01T11:38:59.480276" elapsed="2.001037"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem de erro do backend">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:01.482772" level="INFO">Verifying element 'xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[1]/preceding::div[1]' contains exact text 'A data de término não pode ser anterior à data de início.'.</msg>
+<arg>${MENSAGEM_ALERTA}</arg>
+<arg>${mensagem_esperada}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-01T11:39:01.482357" elapsed="0.029422"/>
+</kw>
+<arg>A data de término não pode ser anterior à data de início.</arg>
+<status status="PASS" start="2026-06-01T11:39:01.481830" elapsed="0.030118"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:38:58.486449" elapsed="3.025867"/>
+</test>
+<test id="s1-t7" name="CT07 Deve cadastrar medicamento com sucesso" line="60">
+<kw name="Acessar Formulário De Novo Medicamento" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:01.514306" level="INFO">Opening url 'http://localhost:8080/medicamentos/novo'</msg>
+<arg>${URL_NOVO_MED}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:39:01.514103" elapsed="0.250467"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:39:01.513718" elapsed="0.251045"/>
+</kw>
+<kw name="Dado que o usuário preenche o formulário com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:01.766613" level="INFO">Typing text 'Dipirona' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:01.766118" elapsed="0.087614"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:01.854294" level="INFO">Typing text '1 cápsula' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:01.853936" elapsed="0.121484"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:01.976184" level="INFO">Typing text 'A cada 8 horas' into text field 'id=frequencia'.</msg>
+<arg>${INPUT_FREQ}</arg>
+<arg>${frequencia}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:01.975707" elapsed="0.115817"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:02.092305" level="INFO">Typing text 'Dr. Arnaldo' into text field 'id=medico'.</msg>
+<arg>${INPUT_MEDICO}</arg>
+<arg>${medico}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.091810" elapsed="0.083664"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:02.177490" level="INFO">Selecting options from selection list 'id=pacienteId' by value 3.</msg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.177067" elapsed="0.068017"/>
+</kw>
+<arg>'${pacienteId}' != '${EMPTY}'</arg>
+<arg>Select From List By Value</arg>
+<arg>${SELECT_PACIENTE}</arg>
+<arg>${pacienteId}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.175765" elapsed="0.069478"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:02.245909" level="INFO">Typing text '01/06/2026' into text field 'id=dataInicio'.</msg>
+<arg>${INPUT_DATA_INI}</arg>
+<arg>${dataInicio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.245459" elapsed="0.069456"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:02.315632" level="INFO">Typing text '10/06/2026' into text field 'id=dataFim'.</msg>
+<arg>${INPUT_DATA_FIM}</arg>
+<arg>${dataFim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.315174" elapsed="0.098485"/>
+</kw>
+<arg>Dipirona</arg>
+<arg>1 cápsula</arg>
+<arg>A cada 8 horas</arg>
+<arg>Dr. Arnaldo</arg>
+<arg>3</arg>
+<arg>01/06/2026</arg>
+<arg>10/06/2026</arg>
+<status status="PASS" start="2026-06-01T11:39:01.765364" elapsed="0.648469"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:02.414815" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.414557" elapsed="0.077130"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:39:02.414290" elapsed="0.077506"/>
+</kw>
+<kw name="Então o sistema deve redirecionar para a listagem geral">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:39:02.496086" level="INFO">Current location contains '/medicamentos/novo'.</msg>
+<arg>/medicamentos/novo</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.492514" elapsed="0.003664"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:39:02.492208" elapsed="0.004058"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:39:01.513089" elapsed="0.983445"/>
+</test>
+<kw name="Fechar O Navegador Completo" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T11:39:02.497415" elapsed="2.128645"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:39:02.497216" elapsed="2.129011"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:37:49.294384" elapsed="75.331905"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Web Test Medicamentos" id="s1" pass="7" fail="0" skip="0">Web Test Medicamentos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

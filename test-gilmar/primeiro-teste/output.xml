@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-01T11:36:27.710049" rpa="false" schemaversion="5">
+<suite id="s1" name="Web Test Login" source="C:\Users\Gilmas\Documents\Faculdade\2026-01-Semestre\Teste-de-interface-N2\Teste-numero-1\web_test_login.robot">
+<kw name="Dado que o usuário acessa a tela de login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:27.995504" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/SistemaSaude/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:36:27.995212" elapsed="23.208286"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T11:36:51.204001" elapsed="0.020208"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:27.994465" elapsed="23.229939"/>
+</kw>
+<test id="s1-t1" name="CT02 Deve validar credenciais inválidas" line="17">
+<kw name="Dado que o usuário informa o identificador">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:51.226559" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENT}</arg>
+<arg>${identificador}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:51.225908" elapsed="0.084094"/>
+</kw>
+<arg>admin@saude.com</arg>
+<status status="PASS" start="2026-06-01T11:36:51.225359" elapsed="0.084824"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:51.311474" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-01T11:36:51.362175" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:51.311087" elapsed="0.100989"/>
+</kw>
+<arg>SenhaErrada123</arg>
+<status status="PASS" start="2026-06-01T11:36:51.310647" elapsed="0.101586"/>
+</kw>
+<kw name="Quando solicitar o acesso">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:51.413314" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:51.412984" elapsed="2.213672"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:51.412631" elapsed="2.214124"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-01T11:36:55.628056" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-01T11:36:53.627104" elapsed="2.001055"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.629672" level="INFO">Verifying element 'xpath=(.//*[normalize-space(text()) and normalize-space(.)='Sistema de Medicamentos'])[1]/following::div[1]' contains exact text 'Credenciais inválidas.'.</msg>
+<arg>${MENSAGEM_ALERTA}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.629442" elapsed="0.024074"/>
+</kw>
+<arg>Credenciais inválidas.</arg>
+<status status="PASS" start="2026-06-01T11:36:55.629153" elapsed="0.024554"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:51.224539" elapsed="4.429720"/>
+</test>
+<test id="s1-t2" name="CT03 Deve validar identificador vazio" line="24">
+<kw name="Dado que o usuário informa o identificador">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.657470" level="INFO">Typing text '' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENT}</arg>
+<arg>${identificador}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.656936" elapsed="0.076433"/>
+</kw>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2026-06-01T11:36:55.655745" elapsed="0.077769"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.735009" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-01T11:36:55.764291" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.734497" elapsed="0.080463"/>
+</kw>
+<arg>Admin@456</arg>
+<status status="PASS" start="2026-06-01T11:36:55.733976" elapsed="0.081123"/>
+</kw>
+<kw name="Quando solicitar o acesso">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.816063" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.815755" elapsed="0.079310"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:55.815439" elapsed="0.079774"/>
+</kw>
+<kw name="Então o navegador deve apontar o campo identificador como obrigatório">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.896196" level="INFO">Executing JavaScript:
+return document.getElementById('identificador').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-06-01T11:36:55.901096" level="INFO">${valido} = True</msg>
+<var>${valido}</var>
+<arg>return document.getElementById('identificador').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.896001" elapsed="0.005177"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valido}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.901382" elapsed="0.000508"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:55.895634" elapsed="0.006364"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:55.655171" elapsed="0.247174"/>
+</test>
+<test id="s1-t3" name="CT01 Deve realizar login com dados válidos" line="30">
+<kw name="Dado que o usuário informa o identificador">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.904862" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>${INPUT_IDENT}</arg>
+<arg>${identificador}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.904354" elapsed="0.065924"/>
+</kw>
+<arg>admin@saude.com</arg>
+<status status="PASS" start="2026-06-01T11:36:55.903870" elapsed="0.066592"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:55.971751" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-01T11:36:56.005026" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:55.971340" elapsed="0.073708"/>
+</kw>
+<arg>Admin@456</arg>
+<status status="PASS" start="2026-06-01T11:36:55.970909" elapsed="0.074299"/>
+</kw>
+<kw name="Quando solicitar o acesso">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:36:56.046303" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:36:56.045977" elapsed="0.099885"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:56.045600" elapsed="0.100424"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-01T11:36:58.147266" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-01T11:36:56.146447" elapsed="2.000986"/>
+</kw>
+<kw name="Então o sistema deve redirecionar para a tela inicial">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:37:00.298532" level="INFO">Current location contains '/dashboard'.</msg>
+<arg>/dashboard</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-01T11:36:58.148345" elapsed="2.150326"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:58.147945" elapsed="2.150870"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:55.903172" elapsed="4.395976"/>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T11:37:00.300322" elapsed="2.169421"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:37:00.299949" elapsed="2.169908"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:36:27.711688" elapsed="34.758208"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Web Test Login" id="s1" pass="3" fail="0" skip="0">Web Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
