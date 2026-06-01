@@ -1,221 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-06-01T09:35:07.451679" rpa="false" schemaversion="5">
-<suite id="s1" name="Geanne Tests" source="/Users/geanne/Desktop/Hora Certa/geanne_tests.robot">
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-06-01T11:00:50.184467" rpa="false" schemaversion="5">
+<suite id="s1" name="Geanne Pacientes Tests" source="/Users/geanne/Desktop/Hora Certa/tests/geanne_pacientes_tests.robot">
 <kw name="Abrir Navegador E Fazer Login" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:07.580749" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<msg time="2026-06-01T11:00:50.329974" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
 <arg>${URL_BASE}/login</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-01T09:35:07.580593" elapsed="0.942714"/>
+<status status="PASS" start="2026-06-01T11:00:50.329829" elapsed="1.329585"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-01T09:35:08.523628" elapsed="0.378728"/>
+<status status="PASS" start="2026-06-01T11:00:51.659886" elapsed="0.398618"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>id=identificador</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-01T09:35:08.902817" elapsed="0.007900"/>
+<status status="PASS" start="2026-06-01T11:00:52.058660" elapsed="0.010947"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:08.911157" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<msg time="2026-06-01T11:00:52.070047" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
 <arg>id=identificador</arg>
 <arg>${LOGIN}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:08.910844" elapsed="0.082034"/>
+<status status="PASS" start="2026-06-01T11:00:52.069774" elapsed="0.089595"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:08.993208" level="INFO">Typing text 'Admin@123' into text field 'id=senha'.</msg>
+<msg time="2026-06-01T11:00:52.159695" level="INFO">Typing text 'Admin@123' into text field 'id=senha'.</msg>
 <arg>id=senha</arg>
 <arg>${SENHA}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:08.993012" elapsed="0.038184"/>
+<status status="PASS" start="2026-06-01T11:00:52.159501" elapsed="0.038847"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:09.031497" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<msg time="2026-06-01T11:00:52.198636" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
 <arg>xpath=//button[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:09.031333" elapsed="1.723054"/>
+<status status="PASS" start="2026-06-01T11:00:52.198477" elapsed="0.042121"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//a[contains(@href,'/pacientes')]</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.754690" elapsed="0.009325"/>
+<status status="PASS" start="2026-06-01T11:00:52.240732" elapsed="1.779635"/>
 </kw>
-<status status="PASS" start="2026-06-01T09:35:07.580203" elapsed="3.183925"/>
+<status status="PASS" start="2026-06-01T11:00:50.329452" elapsed="3.691027"/>
 </kw>
-<test id="s1-t1" name="CT01 - BVA: Nome com 2 caracteres - defeito identificado" line="14">
+<test id="s1-t1" name="CT01 - PE: Lista de pacientes deve carregar corretamente" line="14">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.764920" level="INFO">Opening url 'http://localhost:8080/pacientes/novo'</msg>
-<arg>${URL_BASE}/pacientes/novo</arg>
+<msg time="2026-06-01T11:00:54.021130" level="INFO">Opening url 'http://localhost:8080/pacientes/lista'</msg>
+<arg>${URL_BASE}/pacientes/lista</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.764789" elapsed="0.018942"/>
+<status status="PASS" start="2026-06-01T11:00:54.021022" elapsed="0.327598"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Cadastro</arg>
+<arg>Pacientes e Usuários</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.783927" elapsed="0.007133"/>
+<status status="PASS" start="2026-06-01T11:00:54.348804" elapsed="0.007343"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.791408" level="INFO">Typing text 'Ab' into text field 'id=nome'.</msg>
-<arg>id=nome</arg>
-<arg>Ab</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.791236" elapsed="0.039187"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.830760" level="INFO">Typing text 'ct01geanne@saude.com' into text field 'id=email'.</msg>
-<arg>id=email</arg>
-<arg>ct01geanne@saude.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.830590" elapsed="0.039219"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.870152" level="INFO">Typing text '44433322211' into text field 'id=cpf'.</msg>
-<arg>id=cpf</arg>
-<arg>44433322211</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.869978" elapsed="0.037569"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.907871" level="INFO">Typing text '99111-0001' into text field 'id=contatoEmergenciaTel'.</msg>
-<arg>id=contatoEmergenciaTel</arg>
-<arg>99111-0001</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.907711" elapsed="0.035383"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.943516" level="INFO">Typing text 'Teste@123' into text field 'id=senha'.</msg>
-<arg>id=senha</arg>
-<arg>Teste@123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.943338" elapsed="0.037483"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:10.981223" level="INFO">Typing text 'Teste@123' into text field 'id=confirmacao'.</msg>
-<arg>id=confirmacao</arg>
-<arg>Teste@123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:10.981004" elapsed="0.037624"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:11.018940" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<arg>xpath=//button[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:11.018790" elapsed="1.034488"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-01T09:35:15.055210" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-01T09:35:12.053512" elapsed="3.001992"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.361910" level="INFO">Current page contains element 'xpath=//table'.</msg>
+<arg>xpath=//table</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.356321" elapsed="0.005655"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.071449" level="INFO">Current page contains text 'Pacientes'.</msg>
-<arg>Pacientes</arg>
+<msg time="2026-06-01T11:00:54.368414" level="INFO">Current page contains text 'Nome'.</msg>
+<arg>Nome</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.056045" elapsed="0.015533"/>
+<status status="PASS" start="2026-06-01T11:00:54.362119" elapsed="0.006346"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.375331" level="INFO">Current page contains text 'CPF'.</msg>
+<arg>CPF</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.368570" elapsed="0.006825"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.382163" level="INFO">Current page contains text 'E-mail'.</msg>
+<arg>E-mail</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.375538" elapsed="0.006677"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-06-01T09:35:15.072201" level="INFO">CT01: sistema não rejeitou nome com 2 chars — defeito confirmado</msg>
-<arg>CT01: sistema não rejeitou nome com 2 chars — defeito confirmado</arg>
+<msg time="2026-06-01T11:00:54.382633" level="INFO">CT01 passou: lista de pacientes carregou corretamente</msg>
+<arg>CT01 passou: lista de pacientes carregou corretamente</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.071855" elapsed="0.000399"/>
+<status status="PASS" start="2026-06-01T11:00:54.382356" elapsed="0.000305"/>
 </kw>
-<doc>Sistema aceita nome com 2 chars (abaixo do mínimo) - defeito</doc>
-<status status="PASS" start="2026-06-01T09:35:10.764263" elapsed="4.308175"/>
+<doc>Classe válida: tela de pacientes carrega com a tabela</doc>
+<status status="PASS" start="2026-06-01T11:00:54.020598" elapsed="0.362159"/>
 </test>
-<test id="s1-t2" name="CT02 - BVA: Nome com 3 caracteres deve ser aceito" line="29">
+<test id="s1-t2" name="CT02 - PE: Botão de novo cadastro deve estar visível" line="24">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.073249" level="INFO">Opening url 'http://localhost:8080/pacientes/novo'</msg>
-<arg>${URL_BASE}/pacientes/novo</arg>
+<msg time="2026-06-01T11:00:54.383171" level="INFO">Opening url 'http://localhost:8080/pacientes/lista'</msg>
+<arg>${URL_BASE}/pacientes/lista</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.073117" elapsed="0.025046"/>
+<status status="PASS" start="2026-06-01T11:00:54.383107" elapsed="0.232217"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Cadastro</arg>
+<arg>Pacientes e Usuários</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.098366" elapsed="0.005645"/>
+<status status="PASS" start="2026-06-01T11:00:54.615494" elapsed="0.007707"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.104436" level="INFO">Typing text 'Bia' into text field 'id=nome'.</msg>
-<arg>id=nome</arg>
-<arg>Bia</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.104198" elapsed="0.035244"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.139776" level="INFO">Typing text 'ct02geanne@saude.com' into text field 'id=email'.</msg>
-<arg>id=email</arg>
-<arg>ct02geanne@saude.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.139607" elapsed="0.034505"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.174443" level="INFO">Typing text '55544433322' into text field 'id=cpf'.</msg>
-<arg>id=cpf</arg>
-<arg>55544433322</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.174280" elapsed="0.033929"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.208536" level="INFO">Typing text '99111-0002' into text field 'id=contatoEmergenciaTel'.</msg>
-<arg>id=contatoEmergenciaTel</arg>
-<arg>99111-0002</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.208372" elapsed="0.042097"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.250787" level="INFO">Typing text 'Teste@123' into text field 'id=senha'.</msg>
-<arg>id=senha</arg>
-<arg>Teste@123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.250626" elapsed="0.044115"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.295076" level="INFO">Typing text 'Teste@123' into text field 'id=confirmacao'.</msg>
-<arg>id=confirmacao</arg>
-<arg>Teste@123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.294910" elapsed="0.035477"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:15.330694" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<arg>xpath=//button[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.330547" elapsed="0.035917"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-01T09:35:18.367901" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-01T09:35:15.366627" elapsed="3.001888"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-06-01T09:35:18.386702" level="INFO">Current page contains text 'Pacientes'.</msg>
-<arg>Pacientes</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-06-01T09:35:18.369908" elapsed="0.016905"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.629975" level="INFO">Current page contains element 'xpath=//a[contains(@href,'/pacientes/novo')]'.</msg>
+<arg>xpath=//a[contains(@href,'/pacientes/novo')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.623364" elapsed="0.006675"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-06-01T09:35:18.387441" level="INFO">CT02 passou: nome com 3 chars foi aceito</msg>
-<arg>CT02 passou: nome com 3 chars foi aceito</arg>
+<msg time="2026-06-01T11:00:54.630349" level="INFO">CT02 passou: botão de novo cadastro está visível</msg>
+<arg>CT02 passou: botão de novo cadastro está visível</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-06-01T09:35:18.387078" elapsed="0.000410"/>
+<status status="PASS" start="2026-06-01T11:00:54.630175" elapsed="0.000199"/>
 </kw>
-<doc>Verifica que nome no limite mínimo (3 chars) é aceito</doc>
-<status status="PASS" start="2026-06-01T09:35:15.072712" elapsed="3.314979"/>
+<doc>Classe válida: botão de novo cadastro está presente e acessível</doc>
+<status status="PASS" start="2026-06-01T11:00:54.382897" elapsed="0.247567"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-06-01T09:35:18.388412" elapsed="0.084202"/>
+<status status="PASS" start="2026-06-01T11:00:54.630765" elapsed="0.081502"/>
 </kw>
-<status status="PASS" start="2026-06-01T09:35:07.452393" elapsed="11.020297"/>
+<status status="PASS" start="2026-06-01T11:00:50.185113" elapsed="4.527220"/>
 </suite>
 <statistics>
 <total>
@@ -224,7 +134,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Geanne Tests" id="s1" pass="2" fail="0" skip="0">Geanne Tests</stat>
+<stat name="Geanne Pacientes Tests" id="s1" pass="2" fail="0" skip="0">Geanne Pacientes Tests</stat>
 </suite>
 </statistics>
 <errors>
