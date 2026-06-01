@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-06-01T11:00:50.184467" rpa="false" schemaversion="5">
+<suite id="s1" name="Geanne Pacientes Tests" source="/Users/geanne/Desktop/Hora Certa/tests/geanne_pacientes_tests.robot">
+<kw name="Abrir Navegador E Fazer Login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:50.329974" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<arg>${URL_BASE}/login</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:00:50.329829" elapsed="1.329585"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T11:00:51.659886" elapsed="0.398618"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=identificador</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:52.058660" elapsed="0.010947"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:52.070047" level="INFO">Typing text 'admin@saude.com' into text field 'id=identificador'.</msg>
+<arg>id=identificador</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:00:52.069774" elapsed="0.089595"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:52.159695" level="INFO">Typing text 'Admin@123' into text field 'id=senha'.</msg>
+<arg>id=senha</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:00:52.159501" elapsed="0.038847"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:52.198636" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T11:00:52.198477" elapsed="0.042121"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(@href,'/pacientes')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:52.240732" elapsed="1.779635"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:00:50.329452" elapsed="3.691027"/>
+</kw>
+<test id="s1-t1" name="CT01 - PE: Lista de pacientes deve carregar corretamente" line="14">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.021130" level="INFO">Opening url 'http://localhost:8080/pacientes/lista'</msg>
+<arg>${URL_BASE}/pacientes/lista</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.021022" elapsed="0.327598"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Pacientes e Usuários</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.348804" elapsed="0.007343"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.361910" level="INFO">Current page contains element 'xpath=//table'.</msg>
+<arg>xpath=//table</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.356321" elapsed="0.005655"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.368414" level="INFO">Current page contains text 'Nome'.</msg>
+<arg>Nome</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.362119" elapsed="0.006346"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.375331" level="INFO">Current page contains text 'CPF'.</msg>
+<arg>CPF</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.368570" elapsed="0.006825"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.382163" level="INFO">Current page contains text 'E-mail'.</msg>
+<arg>E-mail</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.375538" elapsed="0.006677"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-06-01T11:00:54.382633" level="INFO">CT01 passou: lista de pacientes carregou corretamente</msg>
+<arg>CT01 passou: lista de pacientes carregou corretamente</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.382356" elapsed="0.000305"/>
+</kw>
+<doc>Classe válida: tela de pacientes carrega com a tabela</doc>
+<status status="PASS" start="2026-06-01T11:00:54.020598" elapsed="0.362159"/>
+</test>
+<test id="s1-t2" name="CT02 - PE: Botão de novo cadastro deve estar visível" line="24">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.383171" level="INFO">Opening url 'http://localhost:8080/pacientes/lista'</msg>
+<arg>${URL_BASE}/pacientes/lista</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.383107" elapsed="0.232217"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Pacientes e Usuários</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.615494" elapsed="0.007707"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T11:00:54.629975" level="INFO">Current page contains element 'xpath=//a[contains(@href,'/pacientes/novo')]'.</msg>
+<arg>xpath=//a[contains(@href,'/pacientes/novo')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.623364" elapsed="0.006675"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-06-01T11:00:54.630349" level="INFO">CT02 passou: botão de novo cadastro está visível</msg>
+<arg>CT02 passou: botão de novo cadastro está visível</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.630175" elapsed="0.000199"/>
+</kw>
+<doc>Classe válida: botão de novo cadastro está presente e acessível</doc>
+<status status="PASS" start="2026-06-01T11:00:54.382897" elapsed="0.247567"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T11:00:54.630765" elapsed="0.081502"/>
+</kw>
+<status status="PASS" start="2026-06-01T11:00:50.185113" elapsed="4.527220"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Geanne Pacientes Tests" id="s1" pass="2" fail="0" skip="0">Geanne Pacientes Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
